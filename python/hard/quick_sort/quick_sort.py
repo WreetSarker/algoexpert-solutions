@@ -15,9 +15,9 @@ def quickSortHelper(array, startIdx, endIdx):
     while rightIdx >= leftIdx:
         if array[leftIdx] > array[pivotIdx] and array[rightIdx] < array[pivotIdx]:
             swap(leftIdx, rightIdx, array)
-        if array[leftIdx] < array[pivotIdx]:
+        if array[leftIdx] <= array[pivotIdx]:
             leftIdx += 1
-        if array[rightIdx] > array[pivotIdx]:
+        if array[rightIdx] >= array[pivotIdx]:
             rightIdx -= 1
 
     swap(pivotIdx, rightIdx, array)
@@ -35,4 +35,5 @@ def swap(i, j, arr):
     arr[i], arr[j] = arr[j], arr[i]
 
 
-print(quickSort([13, 1, 3, -12, 32, 15, -67, 86, -120, 205, -142, 362, -158]))
+print(quickSort([13, 1, 3, -12, 32, 15, -67,
+      86, -120, 205, -120,  -142, 362, -158]))
